@@ -1,0 +1,40 @@
+### Shared
+
+# path issue grpc-import-path ./proto
+# grpc-proto calculator.proto
+
+@address = localhost:50051
+
+
+### 
+
+# @grpc-plaintext
+
+GRPC {{address}} calculator.Calculator.Add 
+Content-Type: application/json
+
+{
+  "a": 2,
+  "b": 3
+}
+
+
+### 
+
+# @grpc-plaintext
+
+GRPC {{address}} calculator.Calculator.Divide 
+Content-Type: application/json
+
+{
+  "a": 10,
+  "b": 2
+}
+
+
+### 
+
+# @grpc-header "Authorization: some-secret-token"
+# @grpc-plaintext
+
+GRPC {{address}} calculator.Admin.GetRequestCount 
