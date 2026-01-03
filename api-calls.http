@@ -5,10 +5,11 @@
 
 @address = localhost:50051
 
+# @grpc-emit-defaults
+# @grpc-plaintext
+
 
 ### 
-
-# @grpc-plaintext
 
 GRPC {{address}} calculator.Calculator.Add 
 Content-Type: application/json
@@ -34,7 +35,5 @@ Content-Type: application/json
 
 ### 
 
-# @grpc-header "Authorization: some-secret-token"
-# @grpc-plaintext
-
 GRPC {{address}} calculator.Admin.GetRequestCount 
+Authorization: Bearer some-secret-token
